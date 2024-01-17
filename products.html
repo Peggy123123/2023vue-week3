@@ -106,14 +106,14 @@
                       </div>
                       <img class="img-fluid" :src="tempProduct.imagesUrl[key]" style="max-width: 150px;">
                     </div>
-                    <!-- 檢查 tempProduct.imagesUrl 陣列是否為空，或者陣列的最後一個元素是否存在，若tempProduct.imagesUrl陣列為空，或最後一個元素存在，則顯示新增圖片按扭，點下後會push一個空字串進去 -->
+                    <!-- 檢查 tempProduct.imagesUrl 陣列是否為空，或者最後一個欄位有無資料，如果最後一個欄位有資料，則顯示 新增圖片 的按鈕，點下後會push一個空字串進去 -->
                     <div v-if="!tempProduct.imagesUrl.length || tempProduct.imagesUrl[tempProduct.imagesUrl.length - 1]">
                       <button class="btn btn-outline-primary btn-sm d-block w-100"
                         @click="tempProduct.imagesUrl.push('')">
                         新增圖片
-                      </button>
+                      </button> 
                     </div>
-                    <!-- 若最後一個元素不存在，則顯示刪除圖片按扭 -->
+                    <!-- 若最後一個欄位沒有資料，則顯示 刪除圖片 按扭 -->
                     <div v-else>
                       <button class="btn btn-outline-danger btn-sm d-block w-100" @click="tempProduct.imagesUrl.pop()">
                         刪除圖片
